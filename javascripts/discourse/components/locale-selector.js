@@ -9,9 +9,11 @@ export default class LocaleSelector extends Component {
   @service currentUser;
 
   get availableLocales() {
-    return JSON.parse(this.siteSettings.available_locales);
+    return JSON.parse(JSON.stringify([
+      { name: "English", value: "en" },
+      { name: "简体中文", value: "zh_CN" },
+    ]));
   }
-
   @action
   onChangeLocale(value) {
     this.set("currentUser.locale", value);
