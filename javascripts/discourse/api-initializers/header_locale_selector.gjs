@@ -34,10 +34,6 @@ export default apiInitializer("1.28.0", (api) => {
         if (this.state.translateError) {
           return;
         }
-
-        this.state.isTranslated = true;
-        this.state.isTranslating = true;
-        this.scheduleRerender();
       },
     });
   }
